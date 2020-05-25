@@ -5,7 +5,7 @@ import {
 const MapReducer = (state = {}, action ) => {
   
   Object.freeze(state);
-  let newState = Object.assign({}, state);
+  // let newState = Object.assign({}, state);
   switch (action.type) {
     case RECIEVE_ADDRESS:
       return action.address;

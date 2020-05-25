@@ -1,4 +1,4 @@
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import React, { Component } from 'react'
 import { mapStyles } from './map_style'
 import $ from 'jquery'
@@ -22,7 +22,7 @@ export class IndexMap extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
 
         if (nextProps.games.length !== this.props.games.length) {
             this.props.history.push('/');

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
-import GameShowPlayer from './game_show_player';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
-import MapContainer from '../map/map';
-import MapContain from '../map/geocoding'
+import React from 'react';
+// import { withRouter } from 'react-router-dom';
+// import GameShowPlayer from './game_show_player';
+// import { Map, GoogleApiWrapper } from 'google-maps-react';
+// import MapContainer from '../map/map';
+// import MapContain from '../map/geocoding'
 import './show.css';
-import { teamNames1, teamNames2 } from './team_names'
+// import { teamNames1, teamNames2 } from './team_names'
 import ShowMap from '../map/show_map'
 import $ from 'jquery'
 
@@ -35,7 +35,7 @@ class SetGameShow extends React.Component {
         this.props.getGame(this.props.match.params.gameId);
         this.props.getUsers();
         this.props.getUser();
-        let gameId = this.state.id;
+        // let gameId = this.state.id;
         // let teams = localStorage.getItem(`${this.state.id}`) ||
         //  this.state.players[gameId];
         // let teamNames = localStorage.getItem(`${this.teamKey}`) || 
@@ -211,7 +211,10 @@ class SetGameShow extends React.Component {
             
             if (g._id === this.state.id) {
                 game = g
-                this.state.game = game;
+                this.setState({
+                    game: game
+                })
+                // this.state.game = game;
             }
         });
         let scoreboard = 'https://ballup-dev.s3-us-west-1.amazonaws.com/scoreboard-ribbonFinal.mp4';
@@ -341,10 +344,10 @@ class SetGameShow extends React.Component {
                 <div id="color">
                     <div id="color-left">
                     <p id="copyright" >BallUp © 2020</p>
-                        <img src="left-court.png" />
+                        <img src="left-court.png" alt=""/>
                     </div>
                     <div id="color-right">
-                        <img src="right-court.png" />
+                        <img src="right-court.png" alt=""/>
                     </div>
                 </div>
             </div>

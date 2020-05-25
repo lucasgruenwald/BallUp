@@ -1,14 +1,14 @@
  import React, { Component } from "react";
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+// import { Map, GoogleApiWrapper } from 'google-maps-react';
 // import MapContainer from '../map/map';
 import GameItem from './game_item';
 import { Link } from "react-router-dom";
-import IndexMap from "../map/index_map"
+// import IndexMap from "../map/index_map"
 import $ from 'jquery';
-import niceScroll from 'jquery'
+// import niceScroll from 'jquery'
 import './index.css';
 import IndexMapContainer from "../map/index_map_container";
-import { Scrollbars } from 'react-custom-scrollbars';
+// import { Scrollbars } from 'react-custom-scrollbars';
 
 
 class Courts extends Component {
@@ -41,14 +41,15 @@ class Courts extends Component {
 
     handleSumbit() {
         
-        this.state.time = `${this.state.hr}${this.state.min} ${this.state.ampm}`;
-        this.state.location = `${this.state.location} San Francisco, CA`
+        let myTime = `${this.state.hr}${this.state.min} ${this.state.ampm}`;
+        let myLocation = `${this.state.location} San Francisco, CA`
+        
        
         let game = {
             
             title: this.state.title,
-            location: this.state.location,
-            time: this.state.time,
+            location: myLocation,
+            time: myTime,
             game_date: this.state.game_date,
             players: [],
             game_set: false,

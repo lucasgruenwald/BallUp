@@ -1,7 +1,7 @@
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import React, { Component } from 'react'
 import { mapStyles } from './map_style'
-import $ from 'jquery'
+// import $ from 'jquery'
 
 
 class ShowMap extends Component {
@@ -16,7 +16,7 @@ class ShowMap extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.game.players.length){
             this.pushCoords(nextProps.game);
         }
@@ -43,8 +43,8 @@ class ShowMap extends Component {
                 return response.json();
             })
             .then((data) => {
-                this.state.coords = data.results[0].geometry.location;
-                this.setState({ coords: this.state.coords})
+                let myCoords = data.results[0].geometry.location;
+                this.setState({ coords: myCoords})
             });
     }
 

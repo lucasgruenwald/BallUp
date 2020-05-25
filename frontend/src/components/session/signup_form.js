@@ -21,7 +21,7 @@ class SignupForm extends React.Component {
         // this.clearedErrors = false;
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
             this.props.history.push('/games');
         }
@@ -99,32 +99,34 @@ class SignupForm extends React.Component {
                         <p className="please-select">Select your favorite positions:</p>
                         <div className="flex-div">
                             <select onChange={this.update('first')} className="three-options">
-                            <option value="none" selected disabled hidden>
+                            <option value="none" defaultValue disabled hidden>
                                 1st Choice
                             </option>
-                            { postions.map( position => 
+                            { postions.map( (position, idx) => 
                                 <option value={position}
-                                key={""}
+                                key={idx}
                                 >{position}</option>
                             )}
                         </select>
                         {/* <br /> */}
                             <select onChange={this.update('second')} className="three-options">
-                            <option value="none" selected disabled hidden>
+                            <option value="none" defaultValue disabled hidden>
                                 2nd Choice
                             </option>
-                            {secondaryPos.map(position =>
+                            {secondaryPos.map((position, idx) =>
                                 <option value={position}
+                                    key={idx}
                                 >{position}</option>
                             )}
                         </select>
                         {/* <br/> */}
                         <select onChange={this.update('third')} className="three-options">
-                            <option value="none" selected disabled hidden>
+                            <option value="none" defaultValue disabled hidden>
                                 3rd Choice
                             </option>
-                            {tertiaryPos.map(position =>
+                            {tertiaryPos.map((position, idx) =>
                                 <option value={position}
+                                    key={idx}
                                 >{position}</option>
                             )}
                         </select>

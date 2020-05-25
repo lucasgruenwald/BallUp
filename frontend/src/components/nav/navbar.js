@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import './navbar.css'
 import $ from 'jquery';
-import LoginContainer from '../session/login_form_container'
+// import LoginContainer from '../session/login_form_container'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -74,7 +74,7 @@ class NavBar extends React.Component {
                 <Link to="/games"><img className="nav-shoes" 
                 src="shoes512.png" alt="shoes" /></Link>
                 <Link to="/games"><img className="splash-logo" 
-                src="bu_logo.png" /></Link>
+                src="bu_logo.png" alt=""/></Link>
             </div>
         )
         } else {
@@ -82,7 +82,7 @@ class NavBar extends React.Component {
                 
                 <div className="navbar-left">
                     <img className="nav-shoes" src="shoes512.png" alt="shoes" />
-                    <img className="splash-logo" src="bu_logo.png" />
+                    <img className="splash-logo" src="bu_logo.png" alt="" />
                 </div>
             )
         }

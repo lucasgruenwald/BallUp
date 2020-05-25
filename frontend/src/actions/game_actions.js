@@ -1,4 +1,4 @@
-import jwt_decode from 'jwt-decode';
+// import jwt_decode from 'jwt-decode';
 import * as APIUtil from '../util/game_util';
 
 export const RECIEVE_GAME = "RECIEVE_GAME";

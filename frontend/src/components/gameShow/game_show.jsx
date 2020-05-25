@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import React from 'react';
+// import { withRouter } from 'react-router-dom';
 import GameShowPlayer from './game_show_player';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
-import MapContainer from '../map/map';
+// import { Map, GoogleApiWrapper } from 'google-maps-react';
+// import MapContainer from '../map/map';
 import './show.css';
 import { teamNames1, teamNames2 } from './team_names';
-import $ from 'jquery';
+// import $ from 'jquery';
 import ShowMap from '../map/show_map';
 
 
@@ -33,11 +33,11 @@ class GameShow extends React.Component {
         this.props.getUser();
         
 
-        let gameId = this.state.id;
-        let teams = localStorage.getItem(`${this.state.id}`) ||
-         this.state.players[gameId];
-        let teamNames = localStorage.getItem(`${this.teamKey}`) || 
-        this.state.teamNames;
+        // let gameId = this.state.id;
+        // let teams = localStorage.getItem(`${this.state.id}`) ||
+        //  this.state.players[gameId];
+        // let teamNames = localStorage.getItem(`${this.teamKey}`) || 
+        // this.state.teamNames;
 
         // if (typeof teamNames === "string") {
         //     this.state.teamNames[this.teamKey] = JSON.parse(teamNames);
@@ -89,7 +89,7 @@ class GameShow extends React.Component {
     startGame(e) {
         e.preventDefault();
         if (this.state.game.players.length === 10) {
-            if (this.state.game.game_set != undefined) {
+            if (this.state.game.game_set !== undefined) {
                 this.state.game.game_set = true;
                 this.setState({ game: this.state.game })
                 this.props.updateGame(this.state.game);
@@ -205,7 +205,7 @@ class GameShow extends React.Component {
 
     endGame(e) {
         e.preventDefault();
-        if (this.props.player.id == this.state.game.players[0]._id) {
+        if (this.props.player.id === this.state.game.players[0]._id) {
             this.props.removeGame(this.state.game._id)
                 .then(() => this.props.history.push('/'));
         }     
@@ -326,10 +326,10 @@ class GameShow extends React.Component {
                 <div id="color">
                         <div id="color-left">
                             <p id="copyright" >BallUp © 2020</p>
-                            <img src="left-court.png"/>
+                            <img src="left-court.png" alt=""/>
                         </div>
                         <div id="color-right">
-                            <img src="right-court.png" />
+                            <img src="right-court.png" alt=""/>
                         </div>
                 </div>
             </div>
