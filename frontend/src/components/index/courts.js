@@ -98,8 +98,8 @@ class Courts extends Component {
                             <h2 id="list-head">Open Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
                             </h2>
                         <div className="game-list">
-                            {unset_games.map( game => 
-                                <div className="game-list-item">
+                            {unset_games.map( (game, idx) => 
+                                <div className="game-list-item" key={idx}>
                                     <ul className={game._id}><div className="num-circle">
                                         {unset_game_i}</div>
                                         <div className="hide-me">
@@ -119,8 +119,8 @@ class Courts extends Component {
                         <div className="games">
                             <h2 id="list-head">Set Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;</h2>
                                 <div className="set-game-list">
-                                    {set_games.map(game =>
-                                        <div className="game-list-item">
+                                    {set_games.map((game, idx) =>
+                                        <div className="game-list-item" key={idx*5}>
                                             <ul className={game._id}><div className="num-circle-set">
                                                 {set_game_i}</div>
                                                 <div className="hide-me">
@@ -168,7 +168,7 @@ class Courts extends Component {
                             <div className="time-line">
                             <select name={this.state.time} 
                                 onChange={this.update('hr')}>
-                                <option selected disabled>Hr</option>
+                                <option defaultValue disabled>Hr</option>
                                 <option value="1:">1:</option>
                                 <option value="2:">2:</option>
                                 <option value="3:">3:</option>
@@ -185,7 +185,7 @@ class Courts extends Component {
                         
                                 <select name={this.state.time} 
                                     onChange={this.update('min')}>
-                                    <option selected disabled>Min</option>
+                                    <option defaultValue disabled>Min</option>
                                     <option value="00">00</option>
                                     <option value="15">15</option>
                                     <option value="30">30</option>
@@ -193,7 +193,7 @@ class Courts extends Component {
                                 </select>
                             
                             <select name={this.state.time} onChange={this.update('ampm')} >
-                                <option selected disabled>AM/PM</option>
+                                <option defaultValue disabled>AM/PM</option>
                                 <option value="AM">AM</option>
                                 <option value="PM">PM</option>
                             </select>

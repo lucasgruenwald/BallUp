@@ -1,7 +1,7 @@
 import React from "react";
 
 const gameItem = props => {
-  debugger;
+  // debugger;
   let date = `${props.game.game_date.slice(5, 7)} /
   ${props.game.game_date.slice(8, 10)}
   / ${props.game.game_date.slice(0, 4)}`;
