@@ -87,7 +87,8 @@ class SetGameShow extends React.Component {
                 newPlayers.push(player)
             }
         });
-        this.state.game.players = newPlayers;
+        // this.state.game.players = newPlayers;
+        this.setState({game: {...this.state.game, players:newPlayers}})
         this.props.updateGame(this.state.game);
     };
 

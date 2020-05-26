@@ -88,9 +88,10 @@ class GameShow extends React.Component {
             }
         });
         // this.state.game.players = newPlayers;
-        this.state.game.setState({
-            players: newPlayers
-        })
+        this.setState({game: {...this.state.game, players: newPlayers}})
+        // this.setState({
+        //     players: newPlayers
+        // })
         this.props.updateGame(this.state.game);
     };
 
@@ -99,9 +100,7 @@ class GameShow extends React.Component {
         if (this.state.game.players.length === 10) {
             if (this.state.game.game_set !== undefined) {
                 // this.state.game.game_set = true;
-                this.state.game.setState({
-                    game_set: true
-                })
+                this.setState({game: {...this.state.game, game_set:true}})
                 this.setState({ game: this.state.game })
                 this.props.updateGame(this.state.game);
             }
@@ -181,9 +180,10 @@ class GameShow extends React.Component {
             
             // this.state.game.teams = [team1, team2];
             let myArr = [team1, team2]
-            this.state.game.setState({
-                teams: myArr
-            })
+            this.setState({game: {...this.state.game, teams: myArr}})
+            // this.state.game.setState({
+            //     teams: myArr
+            // })
             this.setState({ game: this.state.game })
 
 
@@ -196,9 +196,10 @@ class GameShow extends React.Component {
             // this.state.game.teamNames = [this.firstTeam, 
             //     this.secondTeam];
             let teamNamesArr = [this.firstTeam, this.secondTeam]
-            this.state.game.setState({
-                teamNames: teamNamesArr
-            })
+            this.setState({game: {...this.state.game, teamNames: teamNamesArr}})
+            // this.state.game.setState({
+            //     teamNames: teamNamesArr
+            // })
 
             this.props.updateGame(this.state.game)
                 .then(() => this.props.history.push(`/setgames/${this.state.id}`))
@@ -231,6 +232,7 @@ class GameShow extends React.Component {
     }
 
     activeButtons() {
+        // need to have "join" grayed out when already joined
         let startGray = "gray-out";
         if (this.state.game.players.length === 10) startGray = "";
         if ((this.props.player !== undefined) && 
