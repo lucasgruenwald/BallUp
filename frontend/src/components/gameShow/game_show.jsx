@@ -1,11 +1,11 @@
-import React from 'react';
-// import { withRouter } from 'react-router-dom';
+import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import GameShowPlayer from './game_show_player';
-// import { Map, GoogleApiWrapper } from 'google-maps-react';
-// import MapContainer from '../map/map';
+import { Map, GoogleApiWrapper } from 'google-maps-react';
+import MapContainer from '../map/map';
 import './show.css';
 import { teamNames1, teamNames2 } from './team_names';
-// import $ from 'jquery';
+import $ from 'jquery';
 import ShowMap from '../map/show_map';
 
 
@@ -16,13 +16,8 @@ class GameShow extends React.Component {
         this.removePlayer = this.removePlayer.bind(this)
         this.endGame = this.endGame.bind(this)
         this.startGame = this.startGame.bind(this)
-        this.state = {
-                        id: this.props.match.params.gameId,
-                        game: {}, 
-                        players: {}, 
-                        count: {}, 
-                        fileUrl: '' 
-                    };
+        this.state = {id: this.props.match.params.gameId, game: {}, 
+        players: {}, count: {}, fileUrl: '' };
         this.state.count[this.state.id] = 0;
         this.state.players[this.state.id] = [[], []];
         // this.teamKey = `${this.state.id}teamNames`;
@@ -38,11 +33,11 @@ class GameShow extends React.Component {
         this.props.getUser();
         
 
-        // let gameId = this.state.id;
-        // let teams = localStorage.getItem(`${this.state.id}`) ||
-        //  this.state.players[gameId];
-        // let teamNames = localStorage.getItem(`${this.teamKey}`) || 
-        // this.state.teamNames;
+        let gameId = this.state.id;
+        let teams = localStorage.getItem(`${this.state.id}`) ||
+         this.state.players[gameId];
+        let teamNames = localStorage.getItem(`${this.teamKey}`) || 
+        this.state.teamNames;
 
         // if (typeof teamNames === "string") {
         //     this.state.teamNames[this.teamKey] = JSON.parse(teamNames);
@@ -87,20 +82,15 @@ class GameShow extends React.Component {
                 newPlayers.push(player)
             }
         });
-        // this.state.game.players = newPlayers;
-        this.setState({game: {...this.state.game, players: newPlayers}})
-        // this.setState({
-        //     players: newPlayers
-        // })
+        this.state.game.players = newPlayers;
         this.props.updateGame(this.state.game);
     };
 
     startGame(e) {
         e.preventDefault();
         if (this.state.game.players.length === 10) {
-            if (this.state.game.game_set !== undefined) {
-                // this.state.game.game_set = true;
-                this.setState({game: {...this.state.game, game_set:true}})
+            if (this.state.game.game_set != undefined) {
+                this.state.game.game_set = true;
                 this.setState({ game: this.state.game })
                 this.props.updateGame(this.state.game);
             }
@@ -178,12 +168,7 @@ class GameShow extends React.Component {
             })
             // let teams = [team1, team2];
             
-            // this.state.game.teams = [team1, team2];
-            let myArr = [team1, team2]
-            this.setState({game: {...this.state.game, teams: myArr}})
-            // this.state.game.setState({
-            //     teams: myArr
-            // })
+            this.state.game.teams = [team1, team2];
             this.setState({ game: this.state.game })
 
 
@@ -193,27 +178,30 @@ class GameShow extends React.Component {
           
             this.secondTeam = teamNames2[Math.floor(Math.random() * 
                 teamNames2.length)];
-            // this.state.game.teamNames = [this.firstTeam, 
-            //     this.secondTeam];
-            let teamNamesArr = [this.firstTeam, this.secondTeam]
-            this.setState({game: {...this.state.game, teamNames: teamNamesArr}})
-            // this.state.game.setState({
-            //     teamNames: teamNamesArr
-            // })
+            this.state.game.teamNames = [this.firstTeam, 
+                this.secondTeam];
 
-            this.props.updateGame(this.state.game)
+            this.props.updateGame(this.state.game)   
                 .then(() => this.props.history.push(`/setgames/${this.state.id}`))
+            
+            
         }
     }
 
     openSpots() {
       let gameSize = this.state.game.players.length;
-        if (gameSize< 10){
+        if (gameSize < 9){
             return(
                 <div id="open-spots">
                     {`${10 - gameSize} more spots to be filled.`}
                 </div>
             )
+        } else if (gameSize === 9) {
+           return (
+                <div id="open-spots">
+                {`${10 - gameSize} more spot to be filled.`}
+            </div>
+           )
         } else {
             return(
                 <div id="open-spots">
@@ -225,14 +213,13 @@ class GameShow extends React.Component {
 
     endGame(e) {
         e.preventDefault();
-        if (this.props.player.id === this.state.game.players[0]._id) {
+        if (this.props.player.id == this.state.game.players[0]._id) {
             this.props.removeGame(this.state.game._id)
                 .then(() => this.props.history.push('/'));
         }     
     }
 
     activeButtons() {
-        // need to have "join" grayed out when already joined
         let startGray = "gray-out";
         if (this.state.game.players.length === 10) startGray = "";
         if ((this.props.player !== undefined) && 
@@ -276,9 +263,7 @@ class GameShow extends React.Component {
                 this.state.game = game;
             }
         });
-        
         if (!Object.keys(this.state.game).length) return (<div></div>)
-
         return (
 
             <div className="show">
@@ -315,8 +300,8 @@ class GameShow extends React.Component {
                                 <div className="grid">
                                     <div id="playes"><div>
                                         <div id="p-title">Players</div></div>
-                                        {game.players.map((player, idx) =>
-                                            <div key={idx}> <div id="player">
+                                        {game.players.map((player) =>
+                                            <div > <div id="player">
                                                 @<GameShowPlayer
                                                 player={player} /></div>
                                             </div>
@@ -324,8 +309,8 @@ class GameShow extends React.Component {
                                     </div>
                                     <div><div><div id="r-title">Rating
                                     </div></div>
-                                        {game.players.map((player, idx) =>
-                                            <div key={idx*2}><div id="rating"><img id="ball"
+                                        {game.players.map((player) =>
+                                            <div ><div id="rating"><img id="ball"
                                                 src="ball.png" alt="" /><div 
                                                 id="r-num">4.5</div></div>
                                             </div>
@@ -349,10 +334,10 @@ class GameShow extends React.Component {
                 <div id="color">
                         <div id="color-left">
                             <p id="copyright" >BallUp © 2020</p>
-                            <img src="left-court.png" alt=""/>
+                            <img src="left-court.png"/>
                         </div>
                         <div id="color-right">
-                            <img src="right-court.png" alt=""/>
+                            <img src="right-court.png" />
                         </div>
                 </div>
             </div>
