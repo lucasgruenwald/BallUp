@@ -514,3 +514,7 @@
     /* transform: translateY(100%); */
     font: 1.5vw "Berthold Regular"
 }
+
+.flex-div{
+    display: flex;
+}

@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import React from 'react';
 import GameShowPlayer from './game_show_player';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
-import MapContainer from '../map/map';
 import './show.css';
 import { teamNames1, teamNames2 } from './team_names';
-import $ from 'jquery';
 import ShowMap from '../map/show_map';
 
 
@@ -33,11 +29,11 @@ class GameShow extends React.Component {
         this.props.getUser();
         
 
-        let gameId = this.state.id;
-        let teams = localStorage.getItem(`${this.state.id}`) ||
-         this.state.players[gameId];
-        let teamNames = localStorage.getItem(`${this.teamKey}`) || 
-        this.state.teamNames;
+        // let gameId = this.state.id;
+        // let teams = localStorage.getItem(`${this.state.id}`) ||
+        //  this.state.players[gameId];
+        // let teamNames = localStorage.getItem(`${this.teamKey}`) || 
+        // this.state.teamNames;
 
         // if (typeof teamNames === "string") {
         //     this.state.teamNames[this.teamKey] = JSON.parse(teamNames);
@@ -83,14 +79,17 @@ class GameShow extends React.Component {
             }
         });
         this.state.game.players = newPlayers;
+        // this.setState({ game: {...this.state.game, players: newPlayers} })
+        // //////
         this.props.updateGame(this.state.game);
     };
 
     startGame(e) {
         e.preventDefault();
         if (this.state.game.players.length === 10) {
-            if (this.state.game.game_set != undefined) {
+            if (this.state.game.game_set !== undefined) {
                 this.state.game.game_set = true;
+                // this.setState({ game: { ...this.state.game, game_set: true } })
                 this.setState({ game: this.state.game })
                 this.props.updateGame(this.state.game);
             }
@@ -213,7 +212,7 @@ class GameShow extends React.Component {
 
     endGame(e) {
         e.preventDefault();
-        if (this.props.player.id == this.state.game.players[0]._id) {
+        if (this.props.player.id === this.state.game.players[0]._id) {
             this.props.removeGame(this.state.game._id)
                 .then(() => this.props.history.push('/'));
         }     
@@ -226,10 +225,12 @@ class GameShow extends React.Component {
         (this.props.player.id === this.state.game.players[0]._id)){
         return (
             <div className="buttons">
-                <button className="add-player player-button"
-                    onClick={this.addPlayer}>Join This Game</button>
-                <button className="gray-out"
-                    >Leave This Game</button>
+                {/* <div className="flex-div"> */}
+                    <button className="add-player player-button"
+                        onClick={this.addPlayer}>Join This Game</button>
+                    <button className="gray-out"
+                        >Leave This Game</button>
+                {/* </div> */}
                 <button className={startGray}
                     onClick={this.startGame}>Select Teams</button>
                 <button className="cancel-game"
@@ -238,10 +239,12 @@ class GameShow extends React.Component {
         } else {
             return (
                 <div className="buttons">
-                    <button className="add-player player-button"
-                        onClick={this.addPlayer}>Join This Game</button>
-                    <button className="remove-player player-button"
-                        onClick={this.removePlayer}>Leave This Game</button>
+                    {/* <div className="flex-div"> */}
+                        <button className="gray out"
+                            onClick={this.addPlayer}>Join This Game</button>
+                        <button className="remove-player player-button"
+                            onClick={this.removePlayer}>Leave This Game</button>
+                    {/* </div> */}
                     <button className={startGray}
                         onClick={this.startGame}>Select Teams</button>
                     <button className="gray-out"
@@ -300,8 +303,8 @@ class GameShow extends React.Component {
                                 <div className="grid">
                                     <div id="playes"><div>
                                         <div id="p-title">Players</div></div>
-                                        {game.players.map((player) =>
-                                            <div > <div id="player">
+                                        {game.players.map((player, idx) =>
+                                            <div key={idx}> <div id="player">
                                                 @<GameShowPlayer
                                                 player={player} /></div>
                                             </div>
@@ -309,8 +312,8 @@ class GameShow extends React.Component {
                                     </div>
                                     <div><div><div id="r-title">Rating
                                     </div></div>
-                                        {game.players.map((player) =>
-                                            <div ><div id="rating"><img id="ball"
+                                        {game.players.map((player, idx) =>
+                                            <div key={idx} ><div id="rating"><img id="ball"
                                                 src="ball.png" alt="" /><div 
                                                 id="r-num">4.5</div></div>
                                             </div>
@@ -334,10 +337,10 @@ class GameShow extends React.Component {
                 <div id="color">
                         <div id="color-left">
                             <p id="copyright" >BallUp © 2020</p>
-                            <img src="left-court.png"/>
+                            <img src="left-court.png" alt=""/>
                         </div>
                         <div id="color-right">
-                            <img src="right-court.png" />
+                            <img src="right-court.png" alt=""/>
                         </div>
                 </div>
             </div>
