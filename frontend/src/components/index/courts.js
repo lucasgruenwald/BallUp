@@ -94,7 +94,7 @@ class Courts extends Component {
                     <div className="top">
                         
                         <div className="games">
-                            <h2 id="list-head">Open Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
+                            <h2 id="list-head"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0; Open Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
                             </h2>
                         <div className="game-list">
                             {unset_games.map( (game, idx) => 
@@ -110,36 +110,38 @@ class Courts extends Component {
                                     
                                 </div> 
                                 )}
-                                <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
+                                <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
                             </h2>
                             </div>
                         </div>
 
-                        <div className="games">
-                            <h2 id="list-head">Set Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;</h2>
-                                <div className="set-game-list">
-                                    {set_games.map((game, idx) =>
-                                        <div className="game-list-item" key={idx}>
-                                            <ul className={game._id}><div className="num-circle-set">
-                                                {set_game_i}</div>
-                                                <div className="hide-me">
-                                                    {set_game_i++}</div>
-                                                <Link to={`/setgames/${game._id}`}>
-                                                    <GameItem game={game} />
-                                                </Link>
-
-                                            </ul>
-                                        </div>
-                                    )}
-                                    <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
-                                </h2>
-                                </div>
-                        </div>
+                        
                         
                         <div className="map">
                             <IndexMapContainer 
                             history={this.props.history}
                             />
+                        </div>
+
+                        <div className="games">
+                            <h2 id="list-head"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0; Set Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;</h2>
+                            <div className="set-game-list">
+                                {set_games.map((game, idx) =>
+                                    <div className="game-list-item" key={idx}>
+                                        <ul className={game._id}><div className="num-circle-set">
+                                            {set_game_i}</div>
+                                            <div className="hide-me">
+                                                {set_game_i++}</div>
+                                            <Link to={`/setgames/${game._id}`}>
+                                                <GameItem game={game} />
+                                            </Link>
+
+                                        </ul>
+                                    </div>
+                                )}
+                                <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
+                                </h2>
+                            </div>
                         </div>
                     </div>
 
