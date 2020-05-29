@@ -145,7 +145,7 @@ class Courts extends Component {
 
                     <div className="new-game">
                     <p className="ng-closeout" onClick={this.closeModal}>&times;</p>
-                    <h1>Create a New Game</h1>
+                    <h1>Enter Game Details</h1>
                         <form onSubmit={ (e) => {
                             e.preventDefault();
                             this.handleSumbit()
@@ -206,7 +206,7 @@ class Courts extends Component {
                                 value={this.state.game_set}
                                 onSubmit={this.update('game_set')}
                             />
-                            <input type="submit" value="Submit" />
+                            <input type="submit" value="Create" />
                         </form>
                     </div>
                     <p className="ng-btn" onClick={this.createGameModal}>
