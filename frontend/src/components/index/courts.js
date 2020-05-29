@@ -210,7 +210,7 @@ class Courts extends Component {
                         </form>
                     </div>
                     <p className="ng-btn" onClick={this.createGameModal}>
-                        New Game</p> 
+                        Create New Game</p> 
                 </div>
                 <div id="divider">
                     <p id="copyright">BallUp © 2020</p>

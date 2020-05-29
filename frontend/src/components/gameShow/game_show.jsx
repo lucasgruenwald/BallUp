@@ -80,7 +80,7 @@ class GameShow extends React.Component {
         });
         this.state.game.players = newPlayers;
         // this.setState({ game: {...this.state.game, players: newPlayers} })
-        // //////
+      
         this.props.updateGame(this.state.game);
     };
 

@@ -27,7 +27,7 @@
 
 
 .games {
-    width: 15vw;
+    width: 18vw;
     background-color: rgb(73, 73, 73);
     background-image: url('../../public/list-background.png');
     background-size: 100%;
@@ -148,6 +148,7 @@
     background-color:rgb(36, 36, 36);
 }
 
+
 .games a {
     text-decoration: none;
     color: white;
@@ -191,7 +192,7 @@
     height: 100%;
 }
 .map-container {
-    width: inherit;
+    width: 64%;
     position: absolute;
     height: inherit;
 }
@@ -201,7 +202,7 @@
 .ng-btn {
     position: absolute;
     z-index: 56;
-    left: 30vw;
+    left: 35vw;
     color: #3f3f3e;
     font-family: "Berthold Bold";
     font-size: 1.3vw;
@@ -211,7 +212,8 @@
     padding-left: 1vw;
     padding-right: 1vw;
     border-radius: 4px;
-    margin: 0%;
+    margin-top: -3%;
+    background-color: rgb(179, 199, 138);
 
 }
 
@@ -325,12 +327,12 @@ body {
     color: white;
     text-align: center;
     flex-shrink: 0;
-
     font: 1.6vw "Berthold Regular";
 }
 
 .num-circle-set {
-   background: rgb(36, 36, 36);
+   /* background: rgb(36, 36, 36); */
+   background:#84857e;
 }
 
 .hide-me {

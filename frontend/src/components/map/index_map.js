@@ -109,9 +109,7 @@ export class IndexMap extends Component {
         )
         return (
             <div className="map-container"
-                style={{
-                    width: "70%"
-                }}
+               
 
             >
 
