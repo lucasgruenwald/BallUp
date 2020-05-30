@@ -61,7 +61,7 @@ class ShowMap extends Component {
                 style={{
                     width: "100%",
                     height: "50%",
-                    opacity: "60%"
+                    opacity: "90%"
                 }}
                 disableDefaultUI={true}
                 scrollwheel={false}

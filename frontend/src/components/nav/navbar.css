@@ -163,6 +163,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-right: 30%;
 }
 
 .navbar-right-loggedin li:hover {
@@ -175,6 +176,7 @@
     text-decoration: none;
     font-family: "Berthold Regular";
     font-size: 25px;
+    margin-right: 50%;
 }
 
 .navbar-right-loggedin a {

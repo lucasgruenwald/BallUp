@@ -66,7 +66,7 @@
 .game-info {
     /* transform: translateY(-500%) translateX(1.25%); */
     z-index: 2;
-    color: #a9a471;
+    color: #dfddcf;
     /* position: absolute; */
     margin-top: 42px;
     margin-left: 12px;
@@ -112,7 +112,7 @@
 }
 
 .showbox-right {
-    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(5, 0, 0, 0));
+    background-image: linear-gradient( rgba(75, 75, 75, 0.5), rgba(5, 0, 0, 0));
     height: 100%;
     position: relative;
     width: 50%;
@@ -299,7 +299,7 @@
 }
 
 .showbox-left-top {
-    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(5, 0, 0, 0));
+    background-image: linear-gradient( rgba(44, 44, 44, 0.8), rgba(5, 0, 0, 0));
     height: 50%;
     display: flex;
     align-items: center;
@@ -307,7 +307,7 @@
 }
 
 .showbox-left-bottom {
-    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(5, 0, 0, 0));
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     height: 50%;
     display: flex;
     align-items: center;
@@ -393,8 +393,8 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
     height: 9vh;
     padding-bottom: 5vh;
     margin: 0%;
@@ -406,17 +406,11 @@
     background: none;
     position: absolute;
     z-index: 3;
-    margin: 0%;
     font-family: "Berthold Regular";
     color: white;
     font-size: 3vw;
-    margin-top: 1.5%;
-    right: 1%;
-    transform: translateX(102%);
-    animation-name: slide;
-    animation-duration: 0.411s;
-    animation-fill-mode: forwards;
-    animation-delay: 2.5s;
+    margin-top: 0.5%;
+    text-align: center;
     overflow: hidden;
 }
 

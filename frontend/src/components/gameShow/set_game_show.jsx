@@ -220,7 +220,7 @@ class SetGameShow extends React.Component {
 
             <div className="show">
                 <div className="title-div">
-                    <h1 className="gs-title">&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0; Game Set &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;</h1>
+                    <h1 className="gs-title">&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0; Game Set &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;</h1>
                 </div>
 
                 <div className="flex-vid">
