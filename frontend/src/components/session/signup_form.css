@@ -61,6 +61,16 @@ input, select, button{
     width: 48%
 }
 
+input{
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+}
+
+.new-game-b input {
+    color: white;
+}
+
 p {
     font-size: 12px;
     margin: 0%;
