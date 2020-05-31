@@ -155,7 +155,7 @@ class Courts extends Component {
                             <input type="text"
                                 value={this.state.title}
                                 onChange={this.update('title')}
-                                placeholder=" Title"
+                                placeholder=" Court Name"
                             />
                             <input type="text"
                                 value={this.state.location}

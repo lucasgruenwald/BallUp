@@ -211,12 +211,12 @@
     left: 22vw;
     color: #0e0e0d;
     font-family: "Berthold Bold";
-    font-size: 1.3vw;
+    font-size: 22px;
     transform: translateY(7.5vh) translateX(1.8vw);
     background-color: white;
-    padding: .5vw;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: 4px;
     margin-top: -3%;
     background-color:  rgb(170, 202, 105);
@@ -240,7 +240,7 @@
     width: 200px;
     height: 210px;
     left: 24vw;
-    margin-top: -7vw;
+    margin-top: 0.1vw;
     /* transform: translateY(10vh); */
     padding: 10px;
     padding-bottom: 25px;
@@ -321,9 +321,21 @@
 
 .time-line select:first-child {
     width: 60px;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
 }
 .time-line select:nth-child(2) {
     width: 60px;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+}
+
+.time-line select:nth-child(3) {
+    background-color: black;
+    color: white;
+    border-radius: 3px;
 }
 
 body {
@@ -352,6 +364,10 @@ body {
 
 .hide-me {
     display: none;
+}
+.ng-closeout{
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .ng-closeout:hover {
