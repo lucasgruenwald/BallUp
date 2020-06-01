@@ -61,7 +61,7 @@ class NavBar extends React.Component {
             return (
                 <ul className="navbar-right">
                     <li onClick={this.signupModal}>Sign Up</li>
-                    <li onClick={this.loginModal}>Sign In</li> 
+                    <li style={{textDecoration: 'underline'}} onClick={this.loginModal}>Sign In</li> 
                 </ul>
             );
         }

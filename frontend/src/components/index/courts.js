@@ -213,6 +213,7 @@ class Courts extends Component {
                     </div>
                     <p className="ng-btn" onClick={this.createGameModal}>
                         Create New Game</p> 
+                    <p className="click-pin">&darr;  Click Pins for Game Details  &darr;</p>
                 </div>
                 <div id="divider">
                     <p id="copyright">BallUp © 2020</p>

@@ -60,6 +60,7 @@ class Splash extends React.Component {
                 <div className="hero">
                     <p id="copyright" >BallUp © 2020</p>
                 </div>
+                <p className="white-arrow">&#8593;</p>
                 <div className="tag-container">
                         <div className="modal-background-closed">
                             <p className="close-modal"
@@ -78,12 +79,10 @@ class Splash extends React.Component {
                             <SignupContainer />
                         </div>
                     <ul className="tag-list">
-                        <li><h1 className="tag">It's time for the blacktop to work for 
-                        you</h1></li>
+                        <li><h1 className="tag">Let the blacktop work for you.</h1></li>
                         
                             <li><p className="sub-tag">Be a part of the #1 meetup sensation 
-                            for pickup basketball, and take your hoop game to the next 
-                            level.</p></li>
+                            for pickup basketball.</p></li>
                     </ul>
                         <button onClick={this.signupModal} className="signup-btn">Got Next?</button>
                 </div>

@@ -103,18 +103,18 @@
 
 .tag {
     /* transform: translateY(-50%); */
-    left: -3%;
+    /* left: -3%; */
     color: white;
     font-family: "Berthold Regular";
     font-size: 4.8vw;
     position: relative;
-    transform: translateX(4%);
+    /* transform: translateX(4%); */
     
 }
 
 .sub-tag {
-    transform: translateY(-150%) translateX(2%);
-    right: 4%;
+    transform: translateY(-150%);
+    /* right: 4%; */
     color: white;
     font-family: "Berthold Regular";
     font-size: 2vw;
@@ -123,6 +123,7 @@
 
 .tag-list {
     list-style: none;
+    text-align: center;
 }
 
 .signup-btn {
@@ -192,11 +193,11 @@
 
 .navbar-right-loggedin :last-child{
      margin-left: 12px;
-     padding-right: 20px;
+     padding-right: 2vw;
 }
 
 .navbar-right-loggedin :first-child{
-     padding-right: 0;
+     padding-right: 1vw;
 }
 
 input {

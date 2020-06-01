@@ -57,6 +57,13 @@
     margin-left: 7%;
 }
 
+.white-arrow{
+    color: white;
+    text-align: end;
+    margin-right: 2.6em;
+    font-size: 2em;
+}
+
 input, select, button{
     width: 48%
 }

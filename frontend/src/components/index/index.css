@@ -228,6 +228,20 @@
     color: #1a1a19;
 }
 
+.click-pin{
+    position: absolute;
+    z-index: 56;
+    top: 55px;
+    left: 43vw;
+    color: lightgray;
+    font-family: "Berthold Bold";
+    font-size: 22px;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+}
+
 .new-game {
     display: none;
 }
