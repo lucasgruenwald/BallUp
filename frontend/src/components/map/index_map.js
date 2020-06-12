@@ -2,6 +2,7 @@ import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import React, { Component } from 'react'
 import { mapStyles } from './map_style'
 import $ from 'jquery'
+import { scrollToBottom } from 'react-scroll/modules/mixins/animate-scroll';
 
 
 
@@ -119,7 +120,7 @@ export class IndexMap extends Component {
                     styles={mapStyles}
                     style={{
                         width: "100%",
-                        height: "95vh"
+                        height: "95%"
                     }}
                     disableDefaultUI={true}
                     zoomControl={true}

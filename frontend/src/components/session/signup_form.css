@@ -4,12 +4,12 @@
 
 .su-modal-background {
     height: 45%;
-    width: 40%;
+    width: 30%;
     border-radius: 5px;
     position: fixed;
     padding-top: 78px;
     z-index: 78;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.815);
     /* display: flex;  */
     top: -20%;
     transform: translateY(37%) scale(1.2);

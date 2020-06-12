@@ -20,7 +20,8 @@
     background-color: black;
     border-radius: 5px;
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
     border: none;
     outline: none;
 }
@@ -32,12 +33,12 @@
 }
 
 .modal-background {
-    height: 225px;
+    height: 255px;
     width: 250px;
     border-radius: 10px;
     position: fixed;
     z-index: 78;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.815);
     display: flex; 
     top: -20%;
     transform: translateY(100%) scale(1.2);
@@ -70,6 +71,7 @@
 
 #li-errors {
     position: absolute;
+    margin-top: 35px;
     color: red;
 }
 
